@@ -10,4 +10,9 @@ public class Converter {
         double result = temp / CAKE;
         System.out.printf("%.4f FIL = %.4f CAKE", value, result);
     }
+    public void CAKEtoFIL(double value) {
+        double temp = CAKE * value;
+        double result = temp / FIL;
+        System.out.printf("%.4f CAKE = %.4f FIL", value, result);
+    }
 }
