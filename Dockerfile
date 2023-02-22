@@ -1,5 +1,5 @@
 # Image with gradle on alpine, mark as build
-FROM gradle:7.4-openjdk:19.0.2 AS build
+FROM gradle:8.0-openjdk:19.0.2 AS build
 # Copy in container files
 COPY .  /home/
 # Working directory for new instruction
