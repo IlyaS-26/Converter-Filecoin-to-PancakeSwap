@@ -1,5 +1,5 @@
 # Image with gradle on alpine, mark as build
-FROM gradle:7.5.1-jdk14-alpine AS build
+FROM gradle:7.5.1-jdk11-alpine AS build
 # Copy in container files
 COPY --chown=gradle:gradle . /home/gradle/src
 # Working directory for new instruction
@@ -8,7 +8,7 @@ WORKDIR /home/gradle/src
 RUN gradle build
 
 # Image with jdk
-FROM openjdk:14-jre-slim
+FROM openjdk:11-jre-slim
 # Need to open 9001 port
 EXPOSE 9001
 # Create new directory for jar
