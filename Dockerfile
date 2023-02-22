@@ -9,6 +9,8 @@ RUN gradle build
 
 # Image with jdk
 FROM openjdk:19.0.2-slim
+# Need to open 9001 port
+EXPOSE 9001
 # Create new directory for jar
 RUN mkdir /app
 # Move jar to directory
