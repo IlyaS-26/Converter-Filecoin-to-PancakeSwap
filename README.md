@@ -1,3 +1,8 @@
+```main:```
+![badge](https://github.com/IlyaS-26/Converter-Filecoin-to-PancakeSwap/actions/workflows/gradle-test.yml/badge.svg?branch=main)
+```developer:```
+![badge](https://github.com/IlyaS-26/Converter-Filecoin-to-PancakeSwap/actions/workflows/gradle-test.yml/badge.svg?branch=develop)
+
 # Converter-Filecoin-to-PancakeSwap
 
 Сервис, который позволяет переводить монеты Filecoin (FIL) в PancakeSwap (CAKE) и наоборот.

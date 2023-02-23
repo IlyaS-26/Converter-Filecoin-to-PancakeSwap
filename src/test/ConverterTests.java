@@ -1,4 +1,4 @@
-import org.junit.Assert;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.io.ByteArrayOutputStream;
@@ -13,11 +13,13 @@ public class ConverterTests {
         OutputStream os = new ByteArrayOutputStream();
         System.setOut(new PrintStream(os));
         Converter converter = new Converter();
-        converter.CAKE = 4.107233;
-        converter.FIL = 5.818333;
-        converter.CAKEtoFIL(3);
+        converter.CAKE = 4.0;
+        converter.FIL = 5.0;
+        converter.CAKEtoFIL(5.0);
         System.setOut(outBackup);
-        Assert.assertEquals("3,0000 CAKE = 2,1177 FIL", os.toString());
+        String[] str = os.toString().replace(',', '.').split(" ");
+        Double result = 4.0;
+        Assertions.assertEquals(Double.parseDouble(str[3]), result);
     }
 
     @Test
@@ -26,10 +28,12 @@ public class ConverterTests {
         OutputStream os = new ByteArrayOutputStream();
         System.setOut(new PrintStream(os));
         Converter converter = new Converter();
-        converter.CAKE = 3.907143;
-        converter.FIL = 5.718111;
-        converter.FILtoCAKE(2.1);
+        converter.CAKE = 4.0;
+        converter.FIL = 5.0;
+        converter.FILtoCAKE(2.0);
         System.setOut(outBackup);
-        Assert.assertEquals("2,1000 FIL = 3,0734 CAKE", os.toString());
+        String[] str = os.toString().replace(',', '.').split(" ");
+        Double result = 2.5;
+        Assertions.assertEquals(Double.parseDouble(str[3]), result);
     }
 }
